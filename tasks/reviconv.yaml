@@ -1,3 +1,0 @@
-        - name: convert {{ item.convpath }} to iso8859-1 before updating
-          ansible.builtin.command:
-                  cmd: "{{ base_install_jcl_path }}ansible_rconvert {{ item.convpath }} {{ item.cpybackpath }}"
