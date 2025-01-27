@@ -15,7 +15,7 @@
           _BPX_SHAREAS: "YES"
           _BPX_SPAWN_SCRIP: "YES"
     environment: "{{ environment_vars }}"  
-    hosts: "10.240.64.15"
+    hosts: zos_host
     gather_facts: no
     roles:
             - setup 
