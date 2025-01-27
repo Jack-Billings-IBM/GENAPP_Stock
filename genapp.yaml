@@ -15,7 +15,7 @@
           _BPX_SHAREAS: "YES"
           _BPX_SPAWN_SCRIP: "YES"
     environment: "{{ environment_vars }}"  
-    hosts: "{{ target_host }}"
+    hosts: "https://itzvsi-zos-pvgeytw.techzone.ibm.com"
     gather_facts: no
     roles:
             - setup 
