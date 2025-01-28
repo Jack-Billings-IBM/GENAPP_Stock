@@ -1,7 +1,7 @@
 # Genapp specific Variables
 zosver: '25'
 zos_user: 'ibmuser'
-zos_user_password: 'WXA4Z SKILLS' 
+zos_user_password: 'system23' 
 #
 #
 # This should match the CBSA port # if also installing CBSA
