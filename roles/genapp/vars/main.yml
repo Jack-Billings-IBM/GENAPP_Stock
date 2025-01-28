@@ -16,8 +16,8 @@ cics_sip: 'DFH$SIP1'
 cics_regid: 'CICSTS61'
 #
 #
-cics_hlq: "{{ 'CICSTS.V6R1M0.CICS' if zosver == '31' else 'CICSTS.V6R1M0.CICS' }}"
-cics_hlq_short: "{{ 'CICSTS.V6R1M0' if zosver == '31' else 'CICSTS.V6R1M0' }}"
+cics_hlq: "{{ 'CICSTS.V6R1M0' if zosver == '31' else 'CICSTS.V6R1M0.CICS' }}"
+cics_hlq_short: "{{ 'CICSTS' if zosver == '31' else 'CICSTS.V6R1M0' }}"
 db2_hlq: "{{ 'DB2V13' if zosver == '31' else 'DB2.V13R1M0' }}"
 #
 #
