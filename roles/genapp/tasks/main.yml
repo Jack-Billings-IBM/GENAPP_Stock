@@ -195,14 +195,14 @@
                 - { mem: "{{ genwrk }}@cobol", regex: 'REGION=', replne: '//      REGION=0M' }
                 - { mem: "{{ genwrk }}@cobol", regex: '^//STEPLIB', replne: '//STEPLIB  DD DSN=IGY.V6R4M0.SIGYCOMP,DISP=SHR' }
 
-      # - name: Replace plan name 
-      #   ansible.builtin.replace:
-      #           path: "{{ item.mem }}"
-      #           regexp: "{{ item.regexp }}"
-      #           replace: "{{ item.replne }}"
-        # loop:
-        #         - { mem: "{{ genwrk }}@db2cre", regexp: 'DSNTIA10', replne: 'DSNTIA13' }        
-        #         - { mem: "{{ genwrk }}@db2bind", regexp: 'DSNTIA10', replne: 'DSNTIA13' }
+      - name: Replace plan name 
+        ansible.builtin.replace:
+                path: "{{ item.mem }}"
+                regexp: "{{ item.regexp }}"
+                replace: "{{ item.replne }}"
+        loop:
+                - { mem: "{{ genwrk }}@db2cre", regexp: 'DSNTIA10', replne: 'DSNTIA13' }        
+                - { mem: "{{ genwrk }}@db2bind", regexp: 'DSNTIA10', replne: 'DSNTIA13' }
 
       - name: Add Block JCL to @COBOL
         ansible.builtin.replace:
@@ -384,8 +384,8 @@
                 - { jobname: "{{ genwrk }}@cdef121", timeout: 300, jobcond: '(05,LT)', convert: 'n' }                 
                 - { jobname: "{{ genwrk }}@cobol", timeout: 300, jobcond: '(05,LT)', convert: 'y' }                 
                 - { jobname: "{{ genwrk }}db2d", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
-                # - { jobname: "{{ genwrk }}@db2cre", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
-                # - { jobname: "{{ genwrk }}@db2bind", timeout: 300, jobcond: '(00,NE)', convert: 'y' }
+                - { jobname: "{{ genwrk }}@db2cre", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
+                - { jobname: "{{ genwrk }}@db2bind", timeout: 300, jobcond: '(00,NE)', convert: 'y' }
 
       - name: Cold start CICS 
         include_tasks: submitjob.yaml
