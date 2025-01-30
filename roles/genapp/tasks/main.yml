@@ -384,7 +384,7 @@
                 - { jobname: "{{ genwrk }}@cdef121", timeout: 300, jobcond: '(05,LT)', convert: 'n' }                 
                 - { jobname: "{{ genwrk }}@cobol", timeout: 300, jobcond: '(05,LT)', convert: 'y' }                 
                 - { jobname: "{{ genwrk }}db2d", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
-                - { jobname: "{{ genwrk }}@db2cre", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
+                # - { jobname: "{{ genwrk }}@db2cre", timeout: 300, jobcond: '(00,NE)', convert: 'y' }                 
                 - { jobname: "{{ genwrk }}@db2bind", timeout: 300, jobcond: '(00,NE)', convert: 'y' }
 
       - name: Cold start CICS 
