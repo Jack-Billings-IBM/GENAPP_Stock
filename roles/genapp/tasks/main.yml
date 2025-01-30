@@ -195,11 +195,11 @@
                 - { mem: "{{ genwrk }}@cobol", regex: 'REGION=', replne: '//      REGION=0M' }
                 - { mem: "{{ genwrk }}@cobol", regex: '^//STEPLIB', replne: '//STEPLIB  DD DSN=IGY.V6R4M0.SIGYCOMP,DISP=SHR' }
 
-      - name: Replace plan name 
-        ansible.builtin.replace:
-                path: "{{ item.mem }}"
-                regexp: "{{ item.regexp }}"
-                replace: "{{ item.replne }}"
+      # - name: Replace plan name 
+      #   ansible.builtin.replace:
+      #           path: "{{ item.mem }}"
+      #           regexp: "{{ item.regexp }}"
+      #           replace: "{{ item.replne }}"
         # loop:
         #         - { mem: "{{ genwrk }}@db2cre", regexp: 'DSNTIA10', replne: 'DSNTIA13' }        
         #         - { mem: "{{ genwrk }}@db2bind", regexp: 'DSNTIA10', replne: 'DSNTIA13' }
